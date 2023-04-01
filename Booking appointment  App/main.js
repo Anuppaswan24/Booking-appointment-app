@@ -44,6 +44,12 @@ function onSubmit(e){
         msg.innerHTML = 'please enter all fields';
         setTimeout(() => msg.remove(), 3000);
     }else{
+        const nameInput= document.querySelector('#name').value
+        const emailInput= document.querySelector('#email').value
+        console.log(nameInput,emailInput)
+        const obj= {nameInput,emailInput}
+        console.log(obj);
+        localStorage.setItem(obj.emailInput, JSON.stringify(obj));
         const li = document.createElement('li');
         li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
 
